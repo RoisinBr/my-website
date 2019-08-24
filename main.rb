@@ -153,4 +153,3 @@ put '/counters/:id' do
   count.save
   redirect '/gender-equality'
 end
-
