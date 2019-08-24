@@ -1,0 +1,23 @@
+<div class="container">
+
+  <div>
+    <img class="show-article-img" src="<%=@article.hero_image%>" alt="">
+    <h1><%=@article.title%></h1>
+    <p>By <%=@article_author%> <%=@article.date_published%></p>
+  </div>
+
+  <div>
+    <%=@article.article%>
+  </div>
+
+  <% if logged_in? %>
+    <a class="btn-look" href="/articles/<%=@article.id%>/edit">Update</a>
+    <form action="/articles/<%=@article.id%>" method="post">
+      <input type="hidden" name="_method" value="delete">
+      <button class="btn-look">Delete</button>
+    </form>
+  <% end %>
+
+</div>
+
+<%# /articles/<%=article.id/edit%>

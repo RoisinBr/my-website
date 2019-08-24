@@ -1,0 +1,38 @@
+<div class="container">
+  <%# .url after hero_image? %>
+    <div>
+        <img class="" src="<%=@article.hero_image%>" alt="Hero Image">
+    </div>
+    <div class="">
+        <form action="/articles/<%=@article.id%>" method="post" enctype="multipart/form-data" id="article">
+            <input type="hidden" name="_method" value="put">
+            <label for="">Title: </label>
+            <input class="" type="text" name="title" value="<%=@article.title%>">
+            <label for="">Article: </label>
+            <input type="textarea" id="editor" name="article">
+            <p><%=@article.article%></p>
+            <%# value="<%=@article.article%>
+            <label for="">Category: </label>
+            <input class="" type="text" name="category" value="<%=@article.category%>">
+            <label for="">Image: </label>
+            <input class="" type="file" name="hero_image" value="<%=@article.hero_image%>">
+            <button class="btn-look">Update</button>
+        </form>
+    </div>
+</div>
+
+<%# <script> %>
+  <%# tinymce.init({ %>
+    <%# selector: '#editor', %>
+    <%# keep_styles: false, %>
+    <%# // tinymce.activeEditor.setContent("<%=@article.article%>
+    <%# // init_instance_callback: function (editor) { %>
+    <%# //   editor.on('GetContent', function (e) { %>
+    <%# //     e.content += "<%=@article.article%>
+    <%# //   }); %>
+    <%# } %>
+  <%# }); %>
+  <%# </script> %>
+
+
+

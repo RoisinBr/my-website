@@ -1,0 +1,47 @@
+<h1 class="page-heading">Admin Area</h1>
+
+<% if logged_in? %>
+  <form class="center" action="/session" method="post">
+    <input type="hidden" name="_method" value="delete">
+    <button class="btn-look">Log Out</button>
+  </form>
+<% end %>
+
+<div class="container flex">
+  <div class="admin-container">
+    <h2>Users</h2>
+    <form action="/users" method="post" enctype="multipart/form-data">
+      <input type="text" placeholder="First Name" name="first_name">
+      <input type="text" placeholder="Surname" name="surname">
+      <input type="text" placeholder="Email" name="email">
+      <input type="text" placeholder="Phone" name="phone">
+      <label for="">Profile Picture</label>
+      <input type="file" name="profile_picture">
+      <input type="text" placeholder="Password" name="password">
+      <input type="text"placeholder="Permission" name="permission">
+      <button class="btn-look">Add New</button>
+    </form>
+  </div>
+  <div class="admin-container">
+    <h2>Articles</h2>
+    <form action="/articles" method="post" enctype="multipart/form-data">
+      <label for="">Hero Image:</label>
+      <input type="file" name="hero_image">
+      <input type="text" placeholder="Title" name="title">
+      <input type="textarea" id="editor" placeholder="Article" name="article">
+      <input type="text" placeholder="Category" name="category">
+      <button class="btn-look">Add New</button>
+    </form>
+  </div>
+  <div class="admin-container">
+    <h2>Quotes</h2>
+    <form action="/quotes" method="post">
+      <input type="textbox" placeholder="Quote" name="quote">
+      <input type="text" placeholder="Author" name="author">
+      <input type="text" placeholder="More Detail" name="more_detail">
+      <button class="btn-look">Add New</button>
+    </form>
+  </div>
+</div>
+
+<%# <script src="javascripts/counter.js"></script> %>

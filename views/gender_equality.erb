@@ -1,0 +1,110 @@
+<h1 class="page-heading">Gender Equality</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="card-columns">
+    <div class="card">
+      <% if @articles.length > 0 %>
+        <img src="<%=@articles.last.hero_image%>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%=@articles.last.title%></h5>
+          <p class="card-text"><%=@articles.last.article.truncate(300)%></p>
+          <a href="/articles/<%=@articles.last.id%>">Read More</a>
+        </div>
+      <% else %>
+        <p class="no-article">Article Coming Soon</p>
+      <%end%>
+      </div>
+      <%# <div class="card p-3">
+        <blockquote class="blockquote mb-0 card-body">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+          <footer class="blockquote-footer">
+            <small class="text-muted">
+              Someone famous in <cite title="Source Title">Source Title</cite>
+            </small>
+          </footer>
+        </blockquote>
+      </div> %>
+      <a href="https://www.heforshe.org/en" target="_blank">
+        <div class="card">
+          <img src="media/heforshe.png" class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">HeForShe</h5>
+            <p class="card-text">Commit Now</p> 
+          </div>
+        </div>
+      </a>
+      <div class="card bg-purple text-white text-center p-3">
+        <blockquote class="blockquote mb-0">
+          <p>🎜 "Do you know what it feels like in this world for a girl" 🎜</p>
+          <footer class="blockquote-footer text-white">
+            <small>
+              Madonna, <cite title="Source Title">What it Feels Like For a Girl</cite>
+            </small>
+          </footer>
+        </blockquote>
+      </div>
+      <%# <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This card has a regular title and short paragraphy of text below it.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div> %>
+      <%# <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+      </div> %>
+      <%# <div class="card p-3 text-right">
+        <blockquote class="blockquote mb-0">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+          <footer class="blockquote-footer">
+            <small class="text-muted">
+              Someone famous in <cite title="Source Title">Source Title</cite>
+            </small>
+          </footer>
+        </blockquote>
+      </div> %>
+      <a href="https://twitter.com/JointDestroyer" target="_blank">
+      <div class="card">
+        <img src="media/destroy_the_joint_logo.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">
+          <span class='dead-women-counter'><%=@counter.dead_women%></span> Dead Women and Counting</h5>
+          <p class="card-text">Keep up to date on women who have died as a result of domestic violence in 2019.</p>
+        </div>
+      </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h1 class="page-heading">Blog Posts</h1>
+  <% @articles.each do |article| %>
+  <div class="flex blog-post">
+    <div class="blog-img">
+      <a href="/articles/<%=article.id%>">
+        <img class="img-blog" src="<%=article.hero_image%>" alt="">
+      </a>
+    </div>
+    <div class="blog-detail">
+      <h3><%=article.title%></h3>
+      <p class="article-brief"><%=article.article.truncate(300)%></p>
+      <a class="read-more" href="/articles/<%=article.id%>">Read More</a>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+
+<% if logged_in? %>
+  <p>Dead Women Counter</p>
+  <form action="/counters/<%=@counter.id%>" method="post">
+    <input type="hidden" name="_method" value="put">
+    <%# <input type="integer" name="dead_women" value="<%=@counter.dead_women%>
+    <button class="btn-look counter">+</button>
+  </form>
+<% end %>
+
+<%# <script src="javascripts/counter.js"></script> %>
+

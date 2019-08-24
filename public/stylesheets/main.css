@@ -1,0 +1,206 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Righteous', cursive;
+}
+
+h5 {
+  text-decoration: underline;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  opacity: 0.6;
+  color: black;
+}
+
+img {
+  width: 100%;
+}
+
+header {
+  display: flex;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 9999;
+}
+
+.logo {
+  width: 120px;
+  height: 100%;
+  padding-left: 20px;
+  padding-bottom: 10px;
+}
+
+header ul {
+  display: flex;
+  margin: auto 10px;
+  list-style: none;
+}
+
+header li {
+  padding-left: 10px;
+  padding-right: 10px;
+  border-left: 1px solid black;
+}
+
+/* header li a {
+  color: black;
+} */
+
+/* header li a:hover { */
+  /* opacity: 0.6; */
+  /* text-decoration: none; */
+  /* color: black; */
+/* } */
+
+.first-nav {
+  border-left: none;
+}
+
+section {
+  height: 500px;
+  text-align: center;
+}
+
+section h1 {
+  margin: auto;
+  padding-top: 180px;
+}
+
+.first-section {
+  margin-top: 100px;
+  background-image: url("/media/genderequality.jpg");
+  color: black;
+}
+
+.second-section {
+  background-image: url("/media/rockclimbing.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
+}
+
+.third-section {
+  background-image: url("/media/supernatural.jpg");
+  color: white;
+}
+
+.fourth-section {
+  background-image: url("/media/technology.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.fifth-section {
+  background-image: url("/media/other.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: white;
+}
+
+.parallax {
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.page-heading {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.bg-purple {
+  background-color: indigo;
+}
+
+.lavender {
+  background-color: lavender;
+}
+
+.admin-container {
+  height: 400px;
+  width: 400px;
+  border: 1px dashed grey;
+  margin: auto;
+  margin-bottom: 10px;
+}
+
+.btn-look {
+  background-color: indigo;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 27px;
+  margin-left: 20px;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.center {
+  text-align: center;
+}
+
+h2 {
+  margin-left: 20px;
+}
+
+input {
+  margin: 10px;
+}
+
+.blog-detail {
+  width: 60%;
+  padding-left: 10px;
+  /* flex: wrap; */
+}
+
+.blog-img {
+  width: 40%;
+  padding: 10px;
+}
+
+.blog-post {
+  border: 1px dashed gray;
+  padding-left: 10px;
+  margin: 10px;
+}
+
+.img-blog {
+  max-width: 100%;
+  /* max-height: 250px; */
+  border-radius: 50%;
+}
+
+/* Do a media query that after a certain size change the  */
+
+.show-article-img {
+  max-height: 400px;
+  margin-top: 105px;
+}
+
+.ian {
+  max-width: 60%;
+}
+
+.no-article {
+  text-align: center;
+}
+
+.width-80 {
+  width: 80%;
+}

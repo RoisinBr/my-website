@@ -1,0 +1,138 @@
+<h1 class="page-heading">Supernatural</h1>
+
+<div class="container">
+  <div class="row">
+    <div class="card-columns">
+      <div class="card">
+      <% if @articles.length > 0 %>
+        <img src="<%=@articles.last.hero_image%>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%=@articles.last.title%></h5>
+          <p class="card-text"><%=@articles.last.article.truncate(300)%></p>
+          <a href="/articles/<%=@articles.last.id%>">Read More</a>
+        </div>
+      <% else %>
+        <p class="no-article">Article Coming Soon</p>
+      <%end%>
+      </div>
+      <div class="card p-3">
+        <blockquote class="blockquote mb-0 card-body">
+          <p>"When people see good, they expect good. I don't want to have to live up to anyone's expectations."</p>
+          <footer class="blockquote-footer">
+            <small class="text-muted">
+              Damon Salvatore, <cite title="Source Title">The Vampire Dairies</cite>
+            </small>
+          </footer>
+        </blockquote>
+      </div>
+      <%# <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div> %>
+      <div class="card bg-purple text-white p-3">
+        <blockquote class="blockquote mb-0">
+          <p>Angelus: "No weapons. No friends. No hope. Strip all that away, and what's left?" [thrusts his sword toward Buffy]<br>
+          Buffy: [catching the sword between her hands] "Me."</p>
+          <footer class="blockquote-footer text-white">
+            <small>
+              Angel and Buffy, <cite title="Source Title">Buffy the Vampire Slayer</cite>
+            </small>
+          </footer>
+        </blockquote>
+      </div>
+      <%# <div class="card text-center">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">This card has a regular title and short paragraphy of text below it.</p>
+          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+        </div>
+      </div> %>
+      <%# <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+      </div> %>
+      <%# <div class="card p-3 text-right">
+        <blockquote class="blockquote mb-0">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+          <footer class="blockquote-footer">
+            <small class="text-muted">
+              Someone famous in <cite title="Source Title">Source Title</cite>
+            </small>
+          </footer>
+        </blockquote>
+      </div> %>
+      <div class="card lavender">
+        <div class="card-body">
+          <h5 class="card-title">The countdown is on...</h5>
+          <h6>Supa Nova 2020</h6>
+          <p id="supanova" class="card-text"></p>
+          <h6>Comic Con 2020*</h6>
+          <p id="comiccon" class="card-text"></p>
+          <small>*To be updated once dates confirme.</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+  <h1 class="page-heading">Blog Posts</h1>
+  <% @articles.each do |article| %>
+  <div class="flex blog-post">
+    <div class="blog-img">
+      <a href="/articles/<%=article.id%>">
+        <img class="img-blog" src="<%=article.hero_image%>" alt="">
+      </a>
+    </div>
+    <div class="blog-detail">
+      <h3><%=article.title%></h3>
+      <p class="article-brief"><%=article.article.truncate(300)%></p>
+      <a class="read-more" href="/articles/<%=article.id%>">Read More</a>
+    </div>
+  </div>
+  <% end %>
+</div>
+
+<script>
+var supanovaCountDownDate = new Date("Apr 03, 2020 00:00:00").getTime();
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = supanovaCountDownDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("supanova").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("supanova").innerHTML = "Supa Nova 2020 has started!";
+  }
+}, 1000);
+
+var comicconCountDownDate = new Date("Jun 06, 2020 00:00:00").getTime();
+var y = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = comicconCountDownDate - now;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  document.getElementById("comiccon").innerHTML = days + "d " + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  if (distance < 0) {
+    clearInterval(x);
+    document.getElementById("comiccon").innerHTML = "Oz Comic-Con 2020 has started!";
+  }
+}, 1000);
+
+</script>
