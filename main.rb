@@ -31,7 +31,6 @@ end
 get '/gender-equality' do
   @articles = Article.where(category: "gender")
   @counter = Counter.first
-  # binding.pry
   erb :gender_equality
 end
 
