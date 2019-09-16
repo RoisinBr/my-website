@@ -204,3 +204,20 @@ input {
 .width-80 {
   width: 80%;
 }
+
+.social {
+  width: 100px;
+  padding: 20px;
+}
+
+.center {
+  text-align: center;
+  align-items: center;
+  margin: auto;
+  justify-content: space-evenly;
+}
+
+.width-50 {
+  width: 50%;
+  margin-top: 50px;
+}
