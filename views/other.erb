@@ -65,13 +65,12 @@
           </footer>
         </blockquote>
       </div>
-      <%# <div class="card text-center">
+      <div class="card text-center">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This card has a regular title and short paragraphy of text below it.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <h5 class="card-title">Days Spent in Isolation</h5>
+          <h1 class="card-text" id=isolation></h1>
         </div>
-      </div> %>
+      </div>
       <%# <div class="card">
         <div class="card-body">
           <h5 class="card-title">Card title</h5>
@@ -113,3 +112,16 @@
   </div>
   <% end %>
 </div>
+
+<script>
+var isolationCountDate = new Date("Mar 16, 2020 00:00:00").getTime();
+var x = setInterval(function() {
+  var now = new Date().getTime();
+  var distance = now - isolationCountDate;
+
+  var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+
+  document.getElementById("isolation").innerHTML = days + "d ";
+}, 1000);
+
+</script>
