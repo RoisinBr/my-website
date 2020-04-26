@@ -99,7 +99,8 @@
 
 <% if logged_in? %>
   <p>Dead Women Counter</p>
-  <form action="/counters/<%=@counter.id%>" method="post">
+  <form action="/counters/<%=@counter.id%>" method="put">
+    <%#method="post"> %>
     <%# <input type="hidden" name="_method" value="put"> %>
     <input type="integer" name="dead_women" value="<%=@counter.dead_women%>">
     <button class="btn-look counter">Update</button>
