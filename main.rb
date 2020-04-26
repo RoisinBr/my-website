@@ -149,7 +149,7 @@ end
 
 put '/counters/:id' do
   count = Counter.find(params[:id])
-  count.dead_women = count.dead_women += 1;
+  count.dead_women = params[:dead_women];
   count.save
   redirect '/gender-equality'
 end
