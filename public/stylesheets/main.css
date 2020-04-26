@@ -25,13 +25,15 @@ img {
   width: 100%;
 }
 
-header {
-  display: flex;
+.nav-style {
   position: fixed;
   top: 0;
   width: 100%;
-  background-color: white;
   z-index: 9999;
+}
+
+.navbar-expand-lg {
+  padding: 0px;
 }
 
 .logo {
@@ -41,17 +43,21 @@ header {
   padding-bottom: 10px;
 }
 
-header ul {
+nav ul {
   display: flex;
   margin: auto 10px;
   list-style: none;
 }
 
-header li {
+nav li {
   padding-left: 10px;
   padding-right: 10px;
   border-left: 1px solid black;
+  color: black;
 }
+
+/* .navbar-toggler-icon {
+} */
 
 /* header li a {
   color: black;
