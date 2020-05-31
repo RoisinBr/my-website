@@ -87,6 +87,3 @@ DEPENDENCIES
   pry
   sinatra
   sinatra-reloader
-
-BUNDLED WITH
-   2.0.2
