@@ -8,7 +8,7 @@
         <img src="<%=@articles.last.hero_image%>" class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title"><%=@articles.last.title%></h5>
-          <p class="card-text"><%=@articles.last.article.truncate(302)%></p>
+          <p class="card-text"><%=@articles.last.article.truncate(500)%></p>
           <a href="/articles/<%=@articles.last.id%>">Read More</a>
         </div>
       <% else %>
@@ -68,7 +68,8 @@
       <div class="card text-center">
         <div class="card-body">
           <h5 class="card-title">Days Spent in Isolation</h5>
-          <h1 class="card-text" id=isolation></h1>
+          <h1 class="card-text">77</h1>
+          <%# id=isolation %>
         </div>
       </div>
       <%# <div class="card">
