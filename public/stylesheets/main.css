@@ -227,3 +227,8 @@ input {
   width: 50%;
   margin-top: 50px;
 }
+
+.dateformat {
+  opacity: 0.5;
+  font-style: italic;
+}

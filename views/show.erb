@@ -3,7 +3,8 @@
   <div>
     <img class="show-article-img" src="<%=@article.hero_image%>" alt="">
     <h1><%=@article.title%></h1>
-    <p>By <%=@article_author%> <%=@article.date_published%></p>
+    <p>By <%=@article_author%> <span class="dateformat"><%=@article.date_published.to_formatted_s(:long).slice(0,15)%></span></p>
+    <%# to_sString().slice(0,9) %>
   </div>
 
   <div>

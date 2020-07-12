@@ -68,7 +68,10 @@
       <div class="card text-center">
         <div class="card-body">
           <h5 class="card-title">Days Spent in Isolation</h5>
+          <h6 class="card-title">Round 1</h6>
           <h1 class="card-text">77</h1>
+          <h6 class="card-title">Round 2</h6>
+          <h1 class="card-text" id=isolation></h1>
           <%# id=isolation %>
         </div>
       </div>
@@ -89,9 +92,9 @@
           </footer>
         </blockquote>
       </div>
-      <div class="card">
+      <%# <div class="card">
         <img class="ian" src="media/ian_sommerhalder.jpg" class="card-img-top" alt="...">
-      </div>
+      </div> %>
     </div>
   </div>
 </div>
@@ -115,7 +118,8 @@
 </div>
 
 <script>
-var isolationCountDate = new Date("Mar 16, 2020 00:00:00").getTime();
+//countdown round 1: var isolationCountDate = new Date("Mar 16, 2020 00:00:00").getTime();
+var isolationCountDate = new Date("Jul 08, 2020 00:00:00").getTime();
 var x = setInterval(function() {
   var now = new Date().getTime();
   var distance = now - isolationCountDate;
